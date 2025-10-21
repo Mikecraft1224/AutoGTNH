@@ -1,5 +1,6 @@
 local component = require("component")
 local event = require("event")
+local computer = require("computer")
 
 local function openModem(port) 
     component.modem.open(port)
