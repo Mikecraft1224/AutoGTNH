@@ -1,9 +1,12 @@
 local component = require("component")
 local event = require("event")
-local modem = component.modem
 
-local uptime = computer.uptime
-local pullSignal = computer.pullSignal
+local function broadcast(port, message) 
+    component.modem.broadcast(port, message)
+end
+
+local function uptime() computer.uptime() end
+local function pullSignal(i) pullSignal(i) end
 
 -- modem.open(123)
 
@@ -11,7 +14,7 @@ local i = 0
 local target
 while true do
     i = i + 1
-    modem.broadcast(123, "[" .. i .. "] Hello, World!")
+    broadcast(123, "[" .. i .. "] Hello, World!")
 
     target = uptime() + 1
     while uptime() < target do pullSignal(0) end

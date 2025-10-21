@@ -1,8 +1,9 @@
 local component = require("component")
 local event = require("event")
-local modem = component.modem
 
-modem.open(123)
+local function openModem(port) 
+    component.modem.open(port)
+end
 
 while true do 
     local _, _, from, port, _, message = event.pull("modem_message")
