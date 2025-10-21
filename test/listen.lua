@@ -1,12 +1,10 @@
-local component = require("component")
+local com = require("component")
 local event = require("event")
-local computer = require("computer")
 
-local function openModem(port) 
-    component.modem.open(port)
-end
+local modem = com.modem
+modem.open(123)
 
 while true do 
     local _, _, from, port, _, message = event.pull("modem_message")
-    print("Received message from " .. from .. " on port " .. port .. ": " .. message)
+    print(string.format("Received message from %s on port %d: %s", from, port, message))
 end
