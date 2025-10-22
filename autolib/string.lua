@@ -1,4 +1,4 @@
-local M = { __into = "string" }
+local M = {}
 
 function M.startsWith(str, prefix) return str:sub(1, #prefix) == prefix end
 
