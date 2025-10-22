@@ -1,6 +1,10 @@
 local com = require("component")
 local event = require("event")
 
+function testing()
+    print("This is a test function.")
+end
+
 local modem = com.modem
 modem.open(123)
 

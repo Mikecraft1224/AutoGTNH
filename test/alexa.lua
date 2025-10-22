@@ -1,5 +1,7 @@
 local com = require("component")
 local event = require("event")
+local listen = require("listen")
+
 local chatBox = com.chat_box
 
 if not chatBox then
