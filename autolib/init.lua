@@ -1,6 +1,6 @@
 local MODULE = {}
 
-local buildModule = require("__buildModule")
+local buildModule = require("autolib.__buildModule")
 
 local submodules = {
     "string",
