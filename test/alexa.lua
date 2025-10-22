@@ -10,7 +10,8 @@ chatBox.setName("Alexa")
 
 while true do
     local user, message = event.pull("chat_message")
-    if message then
-        chatBox.say(string.format("Hello, %s! Thanks for telling me '%s'!", user, message))
+    local content = message:match("^Alexa, (.+)")
+    if content then
+        chatBox.say(string.format("Hello, %s! Thanks for telling me '%s'!", user, content))
     end
 end
